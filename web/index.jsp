@@ -60,7 +60,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
+				<a href="index.jsp" class="logo">
 					<img src="images/icons/logo.png" alt="IMG-LOGO">
 				</a>
 
@@ -69,11 +69,11 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li class="sale-noti">
-								<a href="index.html">Inicio</a>
+								<a href="index.jsp">Inicio</a>
 							</li>
 
 							<li>
-								<a href="product.html">Tienda</a>
+								<a href="product.jsp">Tienda</a>
 								<ul class="sub_menu">
 									<li><a href="#">Categoría 1</a></li>
 									<li><a href="#">Categoría 2</a></li>
@@ -87,7 +87,7 @@
 							</li>
 
 							<li>
-								<a href="contact.html">Contacto</a>
+								<a href="contact.jsp">Contacto</a>
 							</li>
 
 							<li>
@@ -156,7 +156,7 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										Ver Carrito
 									</a>
 								</div>
@@ -177,7 +177,7 @@
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="index.html" class="logo-mobile">
+			<a href="index.jsp" class="logo-mobile">
 				<img src="images/icons/logo.png" alt="IMG-LOGO">
 			</a>
 
@@ -238,7 +238,7 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										Ver Carrito
 									</a>
 								</div>
@@ -288,11 +288,11 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="index.html">Inicio</a>
+						<a href="index.jsp">Inicio</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Tienda</a>
+						<a href="product.jsp">Tienda</a>
 						<ul class="sub-menu">
 							<li><a href="#">Categoría 1</a></li>
 							<li><a href="#">Categoría 2</a></li>
@@ -307,7 +307,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="contact.html">Contacto</a>
+						<a href="contact.jsp">Contacto</a>
 					</li>
 
 					<li class="item-menu-mobile">
@@ -337,7 +337,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
 							<!-- Botón -->
-							<a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="product.jsp" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Comprar ahora
 							</a>
 						</div>
@@ -356,7 +356,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
 							<!-- Botón -->
-							<a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="product.jsp" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Comprar ahora
 							</a>
 						</div>
@@ -375,7 +375,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
 							<!-- Botón -->
-							<a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="product.jsp" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Comprar ahora
 							</a>
 						</div>
@@ -731,14 +731,14 @@
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').jsp();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to cart !", "success");
 			});
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').jsp();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
