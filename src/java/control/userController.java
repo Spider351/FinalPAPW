@@ -19,15 +19,15 @@ public class userController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet userController SUCCES</title>");            
+            out.println("<title>Servlet userController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet userController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet userController SUCCES at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
-    
+
     protected void processError(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -36,10 +36,10 @@ public class userController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet userController ERROR</title>");            
+            out.println("<title>Servlet userController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet userController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet userController ERROR at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -49,13 +49,16 @@ public class userController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         dbConection conn = new dbConection();
-        //userDAO userDao = new userDAO(conn);
-        //boolean statusDao = userDao.insert();
-        //if (statusDao) {
-            //processSucces(request, response);
-        //} else {
-            //processError(request, response);
-        //}
+        userDAO userD = new userDAO(conn);
+        //boolean statusDao = true;
+        boolean statusDao = userD.insert();
+        System.out.println("SI SALI DE USER DAO");
+        if (statusDao) {
+            processSucces(request, response);
+        } else {
+            processError(request, response);
+        }
+        conn.disconnect();
     }
 
     @Override

@@ -7,14 +7,16 @@ public class dbConection {
     static String bd = "papwdb";
     static String login = "root";
     static String password = "admin";
-    static String url = "jdbc:mysql://localhost/" + bd;
+    //static String url = "jdbc:mysql://localhost/" + bd;
+    static String url = "jdbc:mysql://localhost/papwdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
     Connection conn = null;
 
     public dbConection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, login, password);
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost/papwdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC" + "user=root&password=admin");
             if (conn != null) {
                 System.out.println("Connecting database [" + conn + "] OK");
             }
