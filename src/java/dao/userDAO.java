@@ -13,20 +13,20 @@ public class userDAO {
     
     public user login(String user, String pass) {
         try {
-            String sql = "select * from usuarios where nick=? and password =? limit 1";
+            String sql = "select * from usuarios where nick = ? and password = ? limit 1";
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
             preparedStatement.setString(1, user);
             preparedStatement.setString(2, pass);
             ResultSet rs = preparedStatement.executeQuery();
             user usuario = new user(0);
             while (rs.next()) {
-                usuario.setId(rs.getInt("id"));
+                usuario.setId(rs.getInt("idusuarios"));
                 usuario.setNombre(rs.getString("nombre"));
                 usuario.setApellido(rs.getString("apellido"));
                 usuario.setEmail(rs.getString("email"));
-                usuario.setNick(rs.getString("username"));
+                usuario.setNick(rs.getString("nick"));
                 usuario.setPassword(rs.getString("password"));
-                usuario.setTarjeta(rs.getInt("tarjeta"));
+                usuario.setTarjeta(rs.getLong("tarjeta"));
             }
             return usuario;
         } catch (SQLException e) {
@@ -38,7 +38,6 @@ public class userDAO {
     public boolean insert() {
         try {
             System.out.println("SI ENTRE A USER DAO");
-            //String sql = "insert into usuarios values (?,?,?,?,?,?,?)";
             String sql = "insert into usuarios (nombre,apellido,nick,email,password,tarjeta) values (?,?,?,?,?,?)";
             System.out.println("conn == " + conn);
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);

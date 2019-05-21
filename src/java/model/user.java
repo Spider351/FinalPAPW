@@ -1,26 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author Spider
- */
 public class user {
-    /*
-    Variables de Instancia de la clase.Cada variable, mapea a un campo de la tabla de 
-    Usuario en la base de datos    
-     */
     private int id;
     private String nombre;
     private String apellido;
     private String nick;
     private String email;
     private String password;
-    private int tarjeta;
+    private long tarjeta;
 
     public user(int id) {
         this.id = id;
@@ -74,11 +61,11 @@ public class user {
         this.password = password;
     }
 
-    public int getTarjeta() {
+    public long getTarjeta() {
         return tarjeta;
     }
 
-    public void setTarjeta(int tarjeta) {
+    public void setTarjeta(long tarjeta) {
         this.tarjeta = tarjeta;
     }
 

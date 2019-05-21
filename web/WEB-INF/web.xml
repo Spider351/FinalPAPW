@@ -12,7 +12,7 @@
     
     <servlet-mapping>
         <servlet-name>userController</servlet-name>
-        <url-pattern>/drink</url-pattern>
+        <url-pattern>/credenciales</url-pattern>
     </servlet-mapping>
     
     <session-config>
