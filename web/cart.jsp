@@ -98,32 +98,37 @@
 
                     <!-- Header Icon -->
                     <div class="header-icons">
-                        <div class="header-cart header-dropdown">
-                            <form id="userControllerForm" action="credenciales" method="POST">
-                                <div class="size13 bo4 m-b-12">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
-                                </div>
+                        <div class="header-wrapicon2">
+                            <img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 
-                                <div class="size13 bo4 m-b-22">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="ContraseÃ±a">
-                                </div>
-
-                                <div class="header-cart-buttons">
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
-                                            Iniciar Sesión
-                                        </a>
+                            <!-- Header perfil notification dropdown -->
+                            <div class="header-cart header-dropdown">
+                                <form id="userControllerForm" action="credenciales" method="POST">
+                                    <div class="size13 bo4 m-b-12">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
                                     </div>
 
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="registro.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                            Registrarse
-                                        </a>
+                                    <div class="size13 bo4 m-b-22">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="ContraseÃ±a">
                                     </div>
-                                </div>
-                            </form>
+
+                                    <div class="header-cart-buttons">
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
+                                                Iniciar Sesión
+                                            </a>
+                                        </div>
+
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="registro.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Registrarse
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
                         <span class="linedivide1"></span>
@@ -205,32 +210,37 @@
                 <div class="btn-show-menu">
                     <!-- Header Icon mobile -->
                     <div class="header-icons-mobile">
-                        <div class="header-cart header-dropdown">
-                            <form id="userControllerForm" action="credenciales" method="POST">
-                                <div class="size13 bo4 m-b-12">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
-                                </div>
+                        <div class="header-wrapicon2">
+                            <img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 
-                                <div class="size13 bo4 m-b-22">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="ContraseÃ±a">
-                                </div>
-
-                                <div class="header-cart-buttons">
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
-                                            Iniciar Sesión
-                                        </a>
+                            <!-- Header perfil notification dropdown -->
+                            <div class="header-cart header-dropdown">
+                                <form id="userControllerForm" action="credenciales" method="POST">
+                                    <div class="size13 bo4 m-b-12">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
                                     </div>
 
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="registro.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                            Registrarse
-                                        </a>
+                                    <div class="size13 bo4 m-b-22">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="ContraseÃ±a">
                                     </div>
-                                </div>
-                            </form>
+
+                                    <div class="header-cart-buttons">
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
+                                                Iniciar Sesión
+                                            </a>
+                                        </div>
+
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="registro.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Registrarse
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
                         <span class="linedivide2"></span>
