@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class userController extends HttpServlet {
-    
-    
+
     protected void loginSucces(HttpServletRequest request, HttpServletResponse response, user usuarioLogin)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -25,7 +24,7 @@ public class userController extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet userController SUCCES at " + request.getContextPath() + "</h1>");
-            
+
             out.println("<h1>Datos del usuario Logeado</h1>");
             out.println("<h2>ID: " + usuarioLogin.getId() + "</h2>");
             out.println("<h2>Nombre: " + usuarioLogin.getNombre() + "</h2>");
@@ -34,12 +33,12 @@ public class userController extends HttpServlet {
             out.println("<h2>Email: " + usuarioLogin.getEmail() + "</h2>");
             out.println("<h2>Password: " + usuarioLogin.getPassword() + "</h2>");
             out.println("<h2>Tarjeta: " + usuarioLogin.getTarjeta() + "</h2>");
-            
+
             out.println("</body>");
             out.println("</html>");
         }
     }
-    
+
     protected void loginError(HttpServletRequest request, HttpServletResponse response, String nombreUsuario, String passwordUsuario)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -96,7 +95,7 @@ public class userController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        dbConection conn = new dbConection();
+        /*dbConection conn = new dbConection();
         userDAO userD = new userDAO(conn);
         //boolean statusDao = true;
         boolean statusDao = userD.insert();
@@ -106,7 +105,7 @@ public class userController extends HttpServlet {
         } else {
             processError(request, response);
         }
-        conn.disconnect();
+        conn.disconnect();*/
     }
 
     @Override
@@ -114,10 +113,37 @@ public class userController extends HttpServlet {
             throws ServletException, IOException {
         dbConection conn = new dbConection();
         userDAO daoUser = new userDAO(conn);
+        user Usuario = new user(0);
 
+        String nombreParam = request.getParameter("apellido");
+        System.out.println("Aquí viene el nombre: ");
+        System.out.println(nombreParam);
+        
         //Checando si se esta iniciando sesion o registrando
         if (request.getParameter("nombre") != null) {
             //Registro
+            System.out.println("SI ENTRE A doPost - Registro");
+            String apellidoParam = request.getParameter("apellido");
+            String emailParam = request.getParameter("email");
+            String nickParam = request.getParameter("username");
+            String passwordParam = request.getParameter("password");
+            String tarjetaParam = request.getParameter("tarjeta");
+
+            Usuario.setNombre(nombreParam);
+            Usuario.setApellido(apellidoParam);
+            Usuario.setEmail(emailParam);
+            Usuario.setNick(nickParam);
+            Usuario.setPassword(passwordParam);
+            Usuario.setTarjeta(tarjetaParam);
+
+            boolean statusDao = daoUser.insert(Usuario);
+
+            if (statusDao) {
+                processSucces(request, response);
+            } else {
+                processError(request, response);
+            }
+            conn.disconnect();
         } else {
             //Login
             String usuarioParam = request.getParameter("username");
@@ -126,11 +152,10 @@ public class userController extends HttpServlet {
             System.out.println(passwordParam);
             user usuarioLogin = daoUser.login(usuarioParam, passwordParam);
             conn.disconnect();
-            
-            if(usuarioLogin != null){
+
+            if (usuarioLogin != null) {
                 loginSucces(request, response, usuarioLogin);
-            }
-            else{
+            } else {
                 loginError(request, response, usuarioParam, passwordParam);
             }
         }

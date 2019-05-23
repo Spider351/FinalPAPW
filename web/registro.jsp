@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
-        <title>Cart</title>
+        <title>Registro</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--===============================================================================================-->
@@ -25,7 +25,11 @@
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
         <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+        <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -64,7 +68,7 @@
                     <div class="wrap_menu">
                         <nav class="menu">
                             <ul class="main_menu">
-                                <li>
+                                <li class="sale-noti">
                                     <a href="index.jsp">Inicio</a>
                                 </li>
 
@@ -98,32 +102,37 @@
 
                     <!-- Header Icon -->
                     <div class="header-icons">
-                        <div class="header-cart header-dropdown">
-                            <form id="userControllerForm" action="credenciales" method="POST">
-                                <div class="size13 bo4 m-b-12">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
-                                </div>
+                        <div class="header-wrapicon2">
+                            <img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 
-                                <div class="size13 bo4 m-b-22">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="Contrase帽a">
-                                </div>
-
-                                <div class="header-cart-buttons">
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
-                                            Iniciar Sesi髇
-                                        </a>
+                            <!-- Header perfil notification dropdown -->
+                            <div class="header-cart header-dropdown">
+                                <form id="userControllerForm" action="credenciales" method="POST">
+                                    <div class="size13 bo4 m-b-12">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="username" placeholder="Nombre de Usuario">
                                     </div>
 
-                                    <div class="header-cart-wrapbtn">
-                                        <!-- Button -->
-                                        <a href="registro.jsp" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                            Registrarse
-                                        </a>
+                                    <div class="size13 bo4 m-b-22">
+                                        <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="Contrase馻">
                                     </div>
-                                </div>
-                            </form>
+
+                                    <div class="header-cart-buttons">
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userControllerForm').submit(); return false;">
+                                                Iniciar Sesi髇
+                                            </a>
+                                        </div>
+
+                                        <div class="header-cart-wrapbtn">
+                                            <!-- Button -->
+                                            <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Registrarse
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
                         <span class="linedivide1"></span>
@@ -212,7 +221,7 @@
                                 </div>
 
                                 <div class="size13 bo4 m-b-22">
-                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="Contrase帽a">
+                                    <input class="sizefull s-text7 p-l-15 p-r-15" type="password" name="password" placeholder="Contrase馻">
                                 </div>
 
                                 <div class="header-cart-buttons">
@@ -365,231 +374,54 @@
             </div>
         </header>
 
-        <!-- Title Page -->
-        <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-01.jpg);">
+        <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-07.jpg);">
             <h2 class="l-text2 t-center">
-                Carrito
+                Registro
             </h2>
         </section>
 
-        <!-- Cart -->
-        <section class="cart bgwhite p-t-70 p-b-100">
+        <section class="bgwhite p-t-66 p-b-60">
             <div class="container">
-                <!-- Cart item -->
-                <div class="container-table-cart pos-relative">
-                    <div class="wrap-table-shopping-cart bgwhite">
-                        <table class="table-shopping-cart">
-                            <tr class="table-head">
-                                <th class="column-1"></th>
-                                <th class="column-2">Producto</th>
-                                <th class="column-3">Precio</th>
-                                <th class="column-4 p-l-70">Cantidad</th>
-                                <th class="column-5">Total</th>
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="column-1">
-                                    <div class="cart-img-product b-rad-4 o-f-hidden">
-                                        <img src="images/item-10.jpg" alt="IMG-PRODUCT">
-                                    </div>
-                                </td>
-                                <td class="column-2">Vodka Oso Negro</td>
-                                <td class="column-3">$90.00</td>
-                                <td class="column-4">
-                                    <div class="flex-w bo5 of-hidden w-size17">
-                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-
-                                        <input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="2">
-
-                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="column-5">$180.00</td>
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="column-1">
-                                    <div class="cart-img-product b-rad-4 o-f-hidden">
-                                        <img src="images/item-05.jpg" alt="IMG-PRODUCT">
-                                    </div>
-                                </td>
-                                <td class="column-2">Jugo de Tomate</td>
-                                <td class="column-3">$16.00</td>
-                                <td class="column-4">
-                                    <div class="flex-w bo5 of-hidden w-size17">
-                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-
-                                        <input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="4">
-
-                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="column-5">$64.00</td>
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="column-1">
-                                    <div class="cart-img-product b-rad-4 o-f-hidden">
-                                        <img src="images/item-05.jpg" alt="IMG-PRODUCT">
-                                    </div>
-                                </td>
-                                <td class="column-2">Salsa Inglesa</td>
-                                <td class="column-3">$17.00</td>
-                                <td class="column-4">
-                                    <div class="flex-w bo5 of-hidden w-size17">
-                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-
-                                        <input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="1">
-
-                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="column-5">$17.00</td>
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="column-1">
-                                    <div class="cart-img-product b-rad-4 o-f-hidden">
-                                        <img src="images/item-05.jpg" alt="IMG-PRODUCT">
-                                    </div>
-                                </td>
-                                <td class="column-2">Salsa Tabasco</td>
-                                <td class="column-3">$42.00</td>
-                                <td class="column-4">
-                                    <div class="flex-w bo5 of-hidden w-size17">
-                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-
-                                        <input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="2">
-
-                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                            <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <td class="column-5">$84.00</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
-                    <div class="flex-w flex-m w-full-sm">
-                        <div class="size11 bo4 m-r-10">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="C贸digo de Cup贸n">
-                        </div>
-
-                        <div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
-                            <!-- Button -->
-                            <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                                Aplicar Cup贸n
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="size10 trans-0-4 m-t-10 m-b-10">
-                        <!-- Button -->
-                        <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                            Actualizar Carrito
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Total -->
-                <div class="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
-                    <h5 class="m-text20 p-b-24">
-                        Total
-                    </h5>
-
-                    <!--  -->
-                    <div class="flex-w flex-sb-m p-b-12">
-                        <span class="s-text18 w-size19 w-full-sm">
-                            Subtotal:
-                        </span>
-
-                        <span class="m-text21 w-size20 w-full-sm">
-                            $345.00
-                        </span>
-                    </div>
-
-                    <!--  -->
-                    <div class="flex-w flex-sb bo10 p-t-15 p-b-20">
-                        <span class="s-text18 w-size19 w-full-sm">
-                            Env铆o:
-                        </span>
-
-                        <div class="w-size20 w-full-sm">
-                            <p class="s-text8 p-b-23">
-                                No tiene ninguna direcci贸n de env铆o guardada.
-                            </p>
-
-                            <span class="s-text19">
-                                Calcular Env铆o
-                            </span>
-
-                            <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
-                                <select class="selection-2" name="country">
-                                    <option>Recoger en tienda</option>
-                                    <option>Env铆o a Domicilio</option>
-                                </select>
+                <div class="row">
+                    <div class="col-md-10 p-b-30">
+                        <form id="userRegisterForm" action="credenciales" method="POST">
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="nombre" placeholder="Nombre">
+                            </div>
+                            
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="apellido" placeholder="Apellido">
+                            </div>
+                            
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Correo Electr髇ico">
+                            </div>
+                            
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="username" placeholder="Nombre de Usuario">
                             </div>
 
-                            <div class="size13 bo4 m-b-12">
-                                <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Direcci贸n">
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Contrase馻">
+                            </div>
+                            
+                            <div class="size15 bo4 m-b-20">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="tarjeta" placeholder="Tarjeta de Cr閐ito/D閎ito">
                             </div>
 
-                            <div class="size13 bo4 m-b-12">
-                                <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Ciudad">
+                            <div class="header-cart-buttons">
+                                <div class="header-cart-wrapbtn">
+                                    <!-- Button -->
+                                    <a href="javascript:{}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" onclick="document.getElementById('userRegisterForm').submit(); return false;">
+                                        Registrarse
+                                    </a>
+                                </div>
                             </div>
-
-                            <div class="size13 bo4 m-b-22">
-                                <input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="postcode" placeholder="C贸digo Postal">
-                            </div>
-
-                            <div class="size14 trans-0-4 m-b-10">
-                                <!-- Button -->
-                                <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                                    Calcular Total
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--  -->
-                    <div class="flex-w flex-sb-m p-t-26 p-b-30">
-                        <span class="m-text22 w-size19 w-full-sm">
-                            Total:
-                        </span>
-
-                        <span class="m-text21 w-size20 w-full-sm">
-                            $345.00
-                        </span>
-                    </div>
-
-                    <div class="size15 trans-0-4">
-                        <!-- Button -->
-                        <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                            Proceder al Pago
-                        </button>
+                        </form>	
                     </div>
                 </div>
             </div>
         </section>
-
-
 
         <!-- Footer -->
         <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
@@ -696,9 +528,8 @@
             </span>
         </div>
 
-        <!-- Container Selection -->
+        <!-- Container Selection1 -->
         <div id="dropDownSelect1"></div>
-        <div id="dropDownSelect2"></div>
 
 
 
@@ -716,12 +547,32 @@
                                                                                         minimumResultsForSearch: 20,
                                                                                         dropdownParent: $('#dropDownSelect1')
                                                                                     });
+        </script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+        <script type="text/javascript" src="js/slick-custom.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+        <script type="text/javascript">
+                                                                                    $('.block2-btn-addcart').each(function () {
+                                                                                        var nameProduct = $(this).parent().parent().parent().find('.block2-name').jsp();
+                                                                                        $(this).on('click', function () {
+                                                                                            swal(nameProduct, "is added to cart !", "success");
+                                                                                        });
+                                                                                    });
 
-                                                                                    $(".selection-2").select2({
-                                                                                        minimumResultsForSearch: 20,
-                                                                                        dropdownParent: $('#dropDownSelect2')
+                                                                                    $('.block2-btn-addwishlist').each(function () {
+                                                                                        var nameProduct = $(this).parent().parent().parent().find('.block2-name').jsp();
+                                                                                        $(this).on('click', function () {
+                                                                                            swal(nameProduct, "is added to wishlist !", "success");
+                                                                                        });
                                                                                     });
         </script>
+
         <!--===============================================================================================-->
         <script src="js/main.js"></script>
 

@@ -26,7 +26,7 @@ public class userDAO {
                 usuario.setEmail(rs.getString("email"));
                 usuario.setNick(rs.getString("nick"));
                 usuario.setPassword(rs.getString("password"));
-                usuario.setTarjeta(rs.getLong("tarjeta"));
+                usuario.setTarjeta(rs.getString("tarjeta"));
             }
             return usuario;
         } catch (SQLException e) {
@@ -35,27 +35,25 @@ public class userDAO {
         }
     }
     
-    public boolean insert() {
+    public boolean insert(user usuario) {
         try {
             System.out.println("SI ENTRE A USER DAO");
             String sql = "insert into usuarios (nombre,apellido,nick,email,password,tarjeta) values (?,?,?,?,?,?)";
             System.out.println("conn == " + conn);
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
-            /*preparedStatement.setInt(1, usuario.getId());
-            preparedStatement.setString(2, usuario.getNombre());
-            preparedStatement.setString(3, usuario.getApellido());
-            preparedStatement.setString(4, usuario.getNick());
-            preparedStatement.setString(5, usuario.getEmail());
-            preparedStatement.setString(6, usuario.getPassword());
-            preparedStatement.setInt(7, usuario.getTarjeta());*/
+            preparedStatement.setString(1, usuario.getNombre());
+            preparedStatement.setString(2, usuario.getApellido());
+            preparedStatement.setString(3, usuario.getNick());
+            preparedStatement.setString(4, usuario.getEmail());
+            preparedStatement.setString(5, usuario.getPassword());
+            preparedStatement.setLong(6, Long.parseUnsignedLong(usuario.getTarjeta()));
             
-            //preparedStatement.setInt(1, 3);
-            preparedStatement.setString(1, "Javier");
+            /*preparedStatement.setString(1, "Javier");
             preparedStatement.setString(2, "Ornelas");
             preparedStatement.setString(3, "Spider351");
             preparedStatement.setString(4, "spider351@correo.com");
             preparedStatement.setString(5, "password123");
-            preparedStatement.setLong(6, Long.parseUnsignedLong("1111222233334444"));
+            preparedStatement.setLong(6, Long.parseUnsignedLong("1111222233334444"));*/
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

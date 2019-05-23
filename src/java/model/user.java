@@ -7,7 +7,7 @@ public class user {
     private String nick;
     private String email;
     private String password;
-    private long tarjeta;
+    private String tarjeta;
 
     public user(int id) {
         this.id = id;
@@ -61,11 +61,11 @@ public class user {
         this.password = password;
     }
 
-    public long getTarjeta() {
+    public String getTarjeta() {
         return tarjeta;
     }
 
-    public void setTarjeta(long tarjeta) {
+    public void setTarjeta(String tarjeta) {
         this.tarjeta = tarjeta;
     }
 
